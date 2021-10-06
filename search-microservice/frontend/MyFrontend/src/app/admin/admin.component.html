@@ -1,0 +1,89 @@
+
+      
+        <div  fxLayoutAlign="stretch"  fxLayoutAlign="center center">    
+            
+            
+           
+            
+
+            <mat-card fxFlex="50"> 
+                <mat-toolbar >Register Flights</mat-toolbar>
+                <form  class="div" fxLayout="column" [formGroup]="RegisterForm" (ngSubmit)="submitData()">
+                    <mat-form-field> 
+                        
+                        <input  matInput type="text" formControlName="Flight_id" class="form-control" name="registerObj.Flight_id"  [(ngModel)]='registerObj.Flight_id' placeholder="Enter Flight Id:">
+                    </mat-form-field>
+                <mat-form-field> 
+                    
+                    <input  matInput type="text" formControlName="name" class="form-control" name="registerObj.name"  [(ngModel)]='registerObj.name' placeholder="Enter Flight Name:" >
+                </mat-form-field>
+              
+                <mat-form-field >
+                    <label >Enter starting place:</label>
+                    
+                    <mat-label></mat-label>
+                  
+                    <select matNativeControl [(ngModel)]='registerObj.starting' name="registerObj.starting" formControlName="from" class="form-control" > 
+                      <option value="" selected></option>
+                      <option *ngFor="let flight of flights" [value]="flight.value" >
+                        {{flight.viewValue}}
+                      </option>
+                    </select>
+                </mat-form-field>
+              
+                
+                  
+
+                <mat-form-field >
+                   <label >Enter ending place:</label>
+                    <mat-label></mat-label>
+                    <select matNativeControl [(ngModel)]='registerObj.ending' name="registerObj.ending" formControlName="to" class="form-control" > 
+                      <option value="" selected></option>
+                      <option *ngFor="let flight of flights" [value]="flight.value" >
+                        {{flight.viewValue}}
+                      </option>
+                    </select>
+                </mat-form-field>
+
+
+              
+
+
+
+                  <mat-form-field>
+                   
+                    <input matInput type="date" [(ngModel)]='registerObj.departure' formControlName="departure" class="form-control" name="registerObj.departure" placeholder="Enter Departure Date:" >
+                </mat-form-field>
+                
+
+               
+                <mat-form-field> 
+                 
+                    <input  matInput type="text" formControlName="price" class="form-control" name="registerObj.total"  [(ngModel)]='registerObj.total'placeholder="Enter  Ticket price :" >
+                </mat-form-field>
+
+
+                <mat-form-field >
+                    <label >Enter the type of class:</label>
+                   
+                    <mat-label></mat-label>
+                    <select matNativeControl [(ngModel)]='registerObj.type1' name="registerObj.type1" formControlName="class1" class="form-control" > 
+                      <option value="" selected></option>
+                      <option *ngFor="let flight of type11" [value]="flight.value" >
+                        {{flight.viewValue}}
+                      </option>
+                    </select>
+                </mat-form-field>
+                 
+
+                <button [disabled]="RegisterForm.invalid" mat-button  (click)='sendData()' type="button" >Submit</button>
+            </form>
+            </mat-card>
+
+        
+        </div>
+
+      
+
+       
+            

@@ -1,0 +1,17 @@
+<mat-toolbar>Flight Booking
+
+    <div class="spacer" ></div>
+  
+    <a mat-button (click)="verify1()">Home</a>
+    <a mat-button (click)="verify()">Admin</a>
+    <a mat-button (click)="send()" routerLink="/search">Search-Flights</a>
+    <a mat-button routerLink="/register">Register</a>
+
+
+    <a mat-button  *ngIf="!auth.loggedIn()" routerLink="/login">Login</a>
+    <a mat-button  *ngIf="auth.loggedIn()" routerLink="/login" (click)="auth.logoutUser()">Logout</a>
+   
+
+</mat-toolbar>
+ 
+

@@ -1,0 +1,42 @@
+.position  
+{
+    margin-left: 42%;
+}
+.position2
+{
+    margin-left: 40%;
+}
+
+button
+{
+    margin-left: 7%;
+    color: white;
+    background-color: rgb(49, 221, 221);
+    border-radius: 3px;
+    height: 30px;
+    width: 60px;
+}
+.position1
+{
+    margin-left: 35%;
+}
+.modify
+{
+    color: rgb(109, 53, 194);
+}
+#id
+{
+    margin-right: 2%;
+}
+.body{
+    background-image:url("https://images.hdqwalls.com/download/aeroplane-qhd-2048x1152.jpg");
+    
+    margin-top:5px;
+    animation: animate 30s linear;
+   
+}
+@keyframes animate{
+	100%{
+		transform: translateY(-10px);
+	}
+}
